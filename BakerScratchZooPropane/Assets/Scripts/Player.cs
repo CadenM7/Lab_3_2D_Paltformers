@@ -7,10 +7,14 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D body;
     public float horizontal;
+
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
+    private bool jumping = false;
+
     public float runSpeed = 5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,16 +26,20 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      horizontal = Input.GetAxisRaw("Horizontal");
+        horizontal = Input.GetAxisRaw("Horizontal");
         animator.SetFloat("horizontal", horizontal);
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space) && !jumping) {
             print("Space!");
-            body.AddForce(new Vector2(0, runSpeed * 100));
-        }
+            body.AddForce(new Vector2(0, 400));
+            jumping = true;
+    }
     }
 
     void FixedUpdate() {
         body.velocity = new Vector2(horizontal * runSpeed, body.velocity.y);
+        }
+
+    void OnCollisionEnter2D(Collision2D collision2D) {
+            jumping = false;
+        }
     }
-    
-}

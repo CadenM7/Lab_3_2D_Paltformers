@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8042071106445009475}
   - component: {fileID: 8042071106445009474}
   - component: {fileID: 8042071106445009486}
-  - component: {fileID: 8042071106445009473}
   - component: {fileID: 8042071106445009487}
   m_Layer: 0
   m_Name: ratfolk-m-chef-001_6
@@ -129,20 +128,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8042071106445009473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8042071106445009477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed3dd888b7ae15b4ca1f6869cdee9007, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontal: 0
-  runSpeed: 5
 --- !u!60 &8042071106445009487
 PolygonCollider2D:
   m_ObjectHideFlags: 0
