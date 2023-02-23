@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D body;
     public float horizontal;
-
+    public GameObject player;
     public static GameManager Instance {get; private set;}
 
     public GameObject mainScreen;
@@ -46,7 +46,8 @@ public class Player : MonoBehaviour
     }
         if (transform.position.y <= -5) {
             print("falling");
-            ReturnToStartScreen();
+            GameManager.Instance.ratDead();
+            player.transform.position = new Vector2(-4f, 20f);
         }
 
         if (transform.position.x >= 675) {
