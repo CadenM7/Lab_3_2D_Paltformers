@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public GameObject mainScreen;
     public GameObject creditsScreen;
     public GameObject howToPlayScreen;
+    public GameObject ratDeadScreen;
+    public GameObject endScreen;
     public GameObject curtain;
     private bool raiseLower = false;
     public GameObject canvas;
@@ -84,6 +86,11 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ColorLerpFunction(false, 1));
     }
 
+    public void ratDead() {
+        StartCoroutine(LoadYourAsyncScene("RatDead"));
+        ratDeadScreen.SetActive(true);
+    }
+
     public void Tutorial() {
         StartCoroutine(LoadYourAsyncScene("HowToPlay"));
         mainScreen.SetActive(false);
@@ -91,8 +98,8 @@ public class GameManager : MonoBehaviour
     }
 
     public void ShowCredits() {
-        mainScreen.SetActive(false);
         StartCoroutine(LoadYourAsyncScene("Credits"));
+        mainScreen.SetActive(false);
         creditsScreen.SetActive(true);
     }
 
@@ -105,6 +112,8 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LoadYourAsyncScene("StartScreen"));
         creditsScreen.SetActive(false);
         howToPlayScreen.SetActive(false);
+        ratDeadScreen.SetActive(false);
+        endScreen.SetActive(false);
         mainScreen.SetActive(true);
     }
     
