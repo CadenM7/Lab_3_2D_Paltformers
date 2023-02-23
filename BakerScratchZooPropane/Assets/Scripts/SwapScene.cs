@@ -8,12 +8,12 @@ using UnityEngine.UI;
 // Bug: When you run into a mushroom and press SpaceBar, you will no longer be able to jump
 
 
-public class GameManager : MonoBehaviour
+public class SwapScene : MonoBehaviour
 {
 
     // Inspired from the Diggers game created in class
 
-    public static GameManager Instance {get; private set;}
+    public static SwapScene Instance {get; private set;}
     public GameObject mainScreen;
     public GameObject curtain;
     private bool raiseLower = false;
@@ -76,28 +76,9 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ColorLerpFunction(false, 1));
     }
 
-    public void Tutorial() {
-        StartCoroutine(LoadYourAsyncScene("HowToPlay"));
-        mainScreen.SetActive(false);
-    }
-
-    public void EndGame() {
-        StartCoroutine(LoadYourAsyncScene("EndScreen"));
-        mainScreen.SetActive(false);
-    }
-
-    public void ShowCredits() {
-        StartCoroutine(LoadYourAsyncScene("Credits"));
-        mainScreen.SetActive(false);
-    }
-
-    public void StartGame() {
-        StartCoroutine(LoadYourAsyncScene("MainGame"));
-        mainScreen.SetActive(false);
-    }
-
     public void ReturnToStartScreen() {
         StartCoroutine(LoadYourAsyncScene("StartScreen"));
+        print("test");
         mainScreen.SetActive(false);
     }
     
