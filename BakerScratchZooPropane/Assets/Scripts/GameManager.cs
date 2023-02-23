@@ -5,6 +5,8 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+// Bug: When you run into a mushroom and press SpaceBar, you will no longer be able to jump
+
 
 public class GameManager : MonoBehaviour
 {
