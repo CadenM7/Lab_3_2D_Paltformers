@@ -13,8 +13,13 @@ public class GameManager : MonoBehaviour
 
     // Inspired from the Diggers game created in class
 
+
+
     public static GameManager Instance {get; private set;}
     public GameObject mainScreen;
+    public GameObject creditsScreen;
+    public GameObject howToPlayScreen;
+    public GameObject endScreen;
     public GameObject curtain;
     private bool raiseLower = false;
     public GameObject canvas;
@@ -26,8 +31,10 @@ public class GameManager : MonoBehaviour
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
                 DontDestroyOnLoad(canvas);
+                DontDestroyOnLoad(eventSystem);
             } else {
                 Destroy(gameObject);
+                Destroy(eventSystem);
             }
 
         }
@@ -80,16 +87,19 @@ public class GameManager : MonoBehaviour
     public void Tutorial() {
         StartCoroutine(LoadYourAsyncScene("HowToPlay"));
         mainScreen.SetActive(false);
+        howToPlayScreen.SetActive(true);
     }
 
     public void EndGame() {
         StartCoroutine(LoadYourAsyncScene("EndScreen"));
         mainScreen.SetActive(false);
+        endScreen.SetActive(true);
     }
 
     public void ShowCredits() {
-        StartCoroutine(LoadYourAsyncScene("Credits"));
         mainScreen.SetActive(false);
+        StartCoroutine(LoadYourAsyncScene("Credits"));
+        creditsScreen.SetActive(true);
     }
 
     public void StartGame() {
@@ -99,7 +109,9 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToStartScreen() {
         StartCoroutine(LoadYourAsyncScene("StartScreen"));
-        mainScreen.SetActive(false);
+        creditsScreen.SetActive(false);
+        howToPlayScreen.SetActive(false);
+        mainScreen.SetActive(true);
     }
     
     // Start is called before the first frame update
