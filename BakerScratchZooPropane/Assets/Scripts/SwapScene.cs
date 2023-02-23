@@ -21,15 +21,15 @@ public class SwapScene : MonoBehaviour
     public GameObject eventSystem;
 
 
-    void Awake() {
-            if (Instance == null) {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-            } else {
-                Destroy(gameObject);
-            }
+    // void Awake() {
+    //         if (Instance == null) {
+    //             Instance = this;
+    //             // DontDestroyOnLoad(gameObject);
+    //         } else {
+    //             Destroy(gameObject);
+    //         }
 
-        }
+    //     }
 
     IEnumerator ColorLerpFunction(bool fadeout, float duration)
     {
