@@ -9,6 +9,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
+    // Inspired from the Diggers game created in class
+
     public static GameManager Instance {get; private set;}
     public GameObject mainScreen;
     public GameObject curtain;
@@ -74,10 +76,29 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ColorLerpFunction(false, 1));
     }
 
+    public void Tutorial() {
+        StartCoroutine(LoadYourAsyncScene("HowToPlay"));
+        mainScreen.SetActive(false);
+    }
+
+    public void EndGame() {
+        StartCoroutine(LoadYourAsyncScene("EndScreen"));
+        mainScreen.SetActive(false);
+    }
+
+    public void ShowCredits() {
+        StartCoroutine(LoadYourAsyncScene("Credits"));
+        mainScreen.SetActive(false);
+    }
+
     public void StartGame() {
         StartCoroutine(LoadYourAsyncScene("MainGame"));
         mainScreen.SetActive(false);
-        print("test");
+    }
+
+    public void ReturnToStartScreen() {
+        StartCoroutine(LoadYourAsyncScene("StartScreen"));
+        mainScreen.SetActive(false);
     }
     
     // Start is called before the first frame update
