@@ -7,15 +7,15 @@ public class Dialog : MonoBehaviour
     
     public string text;
 
-    public void OnCollisionEnter2D(Collision2D collision2D) {
+    public void OnTriggerEnter2D(Collider2D collider2D) {
         print("Entered..");
-        if (collision2D.gameObject.CompareTag("Player")) {
-            DialogManager.Instance.DialogShow(text);
+        if (collider2D.gameObject.CompareTag("Player")) {
+            GameManager.Instance.DialogShow(text);
         }
     }
-    public void OnCollisionExit2D(Collision2D collision2D) {
-        if (collision2D.gameObject.CompareTag("Player")) {
-            DialogManager.Instance.DialogHide();
+    public void OnTriggerExit2D(Collider2D collider2D) {
+        if (collider2D.gameObject.CompareTag("Player")) {
+            GameManager.Instance.DialogHide();
         }
     }
 

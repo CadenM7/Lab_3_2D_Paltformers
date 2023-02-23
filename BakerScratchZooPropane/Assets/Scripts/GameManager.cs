@@ -27,6 +27,27 @@ public class GameManager : MonoBehaviour
     public GameObject eventSystem;
 
 
+    public GameObject dialogBox;
+    public TextMeshProUGUI dialogText;
+
+    public void DialogShow(string text) {
+        dialogBox.SetActive(true);
+        StopAllCoroutines();
+        StartCoroutine(TypeText(text));
+    }
+
+    public void DialogHide() {
+        dialogBox.SetActive(false);
+    }
+
+    IEnumerator TypeText(string text) {
+        dialogText.text = "";
+        foreach (char c in text.ToCharArray()) {
+            dialogText.text += c;
+            yield return new WaitForSeconds(0.02f);
+        }
+    }
+
     void Awake() {
             if (Instance == null) {
                 Instance = this;
@@ -87,18 +108,18 @@ public class GameManager : MonoBehaviour
     }
 
     public void ratDead() {
-        StartCoroutine(LoadYourAsyncScene("RatDead"));
+        // StartCoroutine(LoadYourAsyncScene("RatDead"));
         ratDeadScreen.SetActive(true);
     }
 
     public void Tutorial() {
-        StartCoroutine(LoadYourAsyncScene("HowToPlay"));
+        // StartCoroutine(LoadYourAsyncScene("HowToPlay"));
         mainScreen.SetActive(false);
         howToPlayScreen.SetActive(true);
     }
 
     public void ShowCredits() {
-        StartCoroutine(LoadYourAsyncScene("Credits"));
+        // StartCoroutine(LoadYourAsyncScene("Credits"));
         mainScreen.SetActive(false);
         creditsScreen.SetActive(true);
     }
