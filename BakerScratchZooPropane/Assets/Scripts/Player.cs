@@ -48,6 +48,11 @@ public class Player : MonoBehaviour
             print("falling");
             ReturnToStartScreen();
         }
+
+        if (transform.position.x >= 675) {
+            print("finish");
+            FinishGame();
+        }
     }
 
     void FixedUpdate() {
@@ -105,6 +110,11 @@ public class Player : MonoBehaviour
 
     public void ReturnToStartScreen() {
         StartCoroutine(LoadYourAsyncScene("RatDead"));
+        mainScreen.SetActive(false);
+    }
+
+    public void FinishGame() {
+        StartCoroutine(LoadYourAsyncScene("EndScreen"));
         mainScreen.SetActive(false);
     }
 }
