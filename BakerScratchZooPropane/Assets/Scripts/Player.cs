@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
             body.AddForce(new Vector2(0, 400));
             jumping = true;
     }
-        if (transform.position.y <= -10) {
+        if (transform.position.y <= -5) {
             print("falling");
             ReturnToStartScreen();
         }
@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
     }
 
     public void ReturnToStartScreen() {
-        StartCoroutine(LoadYourAsyncScene("StartScreen"));
+        StartCoroutine(LoadYourAsyncScene("RatDead"));
         mainScreen.SetActive(false);
     }
 }

@@ -134,8 +134,6 @@ GameObject:
   - component: {fileID: 216801157}
   - component: {fileID: 216801156}
   - component: {fileID: 216801155}
-  - component: {fileID: 216801159}
-  - component: {fileID: 216801158}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -193,38 +191,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &216801158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216801154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ccfb53c2e53a0b4d9a3c31815613eef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainScreen: {fileID: 0}
-  curtain: {fileID: 0}
-  canvas: {fileID: 0}
-  eventSystem: {fileID: 0}
---- !u!114 &216801159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216801154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ccfb53c2e53a0b4d9a3c31815613eef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainScreen: {fileID: 0}
-  curtain: {fileID: 0}
-  canvas: {fileID: 0}
-  eventSystem: {fileID: 0}
 --- !u!1 &247938772
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,8 +603,8 @@ MonoBehaviour:
   horizontal: 0
   mainScreen: {fileID: 824027691}
   curtain: {fileID: 902122331}
-  canvas: {fileID: 0}
-  eventSystem: {fileID: 0}
+  canvas: {fileID: 2046300621}
+  eventSystem: {fileID: 216801154}
   runSpeed: 5
 --- !u!1 &882717640
 GameObject:

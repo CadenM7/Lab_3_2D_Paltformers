@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HowToPlay.unity
     guid: 0f64dbbf5230dbf4eba4c4646ed17bbb
+  - enabled: 1
+    path: Assets/Scenes/RatDead.unity
+    guid: 0ad1938e9581e4bfba99c7df3a1aca0b
   m_configObjects: {}
