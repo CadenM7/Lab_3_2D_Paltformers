@@ -41,6 +41,9 @@ TagManager:
   - name: Background
     uniqueID: 3424457669
     locked: 0
+  - name: Sewer
+    uniqueID: 3326696725
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
