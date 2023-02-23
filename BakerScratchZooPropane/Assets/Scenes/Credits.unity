@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 155070082}
   - component: {fileID: 155070081}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Credits Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -825,7 +825,7 @@ GameObject:
   - component: {fileID: 1885538284}
   - component: {fileID: 1885538283}
   m_Layer: 0
-  m_Name: Button
+  m_Name: MainMenu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
