@@ -11,7 +11,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-    // Inspired from the Diggers game created in class
+    // Derived from the Diggers game created in class
 
 
 
@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     public GameObject mainScreen;
     public GameObject creditsScreen;
     public GameObject howToPlayScreen;
-    public GameObject endScreen;
     public GameObject curtain;
     private bool raiseLower = false;
     public GameObject canvas;
@@ -34,6 +33,7 @@ public class GameManager : MonoBehaviour
                 DontDestroyOnLoad(eventSystem);
             } else {
                 Destroy(gameObject);
+                Destroy(canvas);
                 Destroy(eventSystem);
             }
 
@@ -88,12 +88,6 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LoadYourAsyncScene("HowToPlay"));
         mainScreen.SetActive(false);
         howToPlayScreen.SetActive(true);
-    }
-
-    public void EndGame() {
-        StartCoroutine(LoadYourAsyncScene("EndScreen"));
-        mainScreen.SetActive(false);
-        endScreen.SetActive(true);
     }
 
     public void ShowCredits() {
