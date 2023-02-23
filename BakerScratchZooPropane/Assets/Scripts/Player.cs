@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
         if (transform.position.y <= -5) {
             print("falling");
             GameManager.Instance.ratDead();
-            player.transform.position = new Vector2(-4f, 20f);
+            player.transform.position = new Vector2(player.transform.position.x, 4000f);
         }
 
         if (transform.position.x >= 675) {
