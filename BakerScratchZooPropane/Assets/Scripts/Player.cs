@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
             print("falling");
             StartCoroutine("RatFall");
             GameManager.Instance.RatDead();
-            player.transform.position = new Vector2(player.transform.position.x, 4000f);
+            player.transform.position = new Vector2(player.transform.position.x, 15000f);
         }
 
         if (!gameOver) {

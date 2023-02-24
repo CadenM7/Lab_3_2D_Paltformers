@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
 
 
     public static GameManager Instance {get; private set;}
-    public GameObject gameScreen;
     public GameObject mainScreen;
     public GameObject creditsScreen;
     public GameObject howToPlayScreen;
@@ -110,12 +109,13 @@ public class GameManager : MonoBehaviour
 
     public void EndScreen() {
         // StartCoroutine(LoadYourAsyncScene("EndScreen"));
-        gameScreen.SetActive(false);
+        StartCoroutine(LoadYourAsyncScene("StartScreen"));
         endScreen.SetActive(true);
     }
 
     public void RatDead() {
         // StartCoroutine(LoadYourAsyncScene("RatDead"));
+        StartCoroutine(LoadYourAsyncScene("StartScreen"));
         ratDeadScreen.SetActive(true);
     }
 
