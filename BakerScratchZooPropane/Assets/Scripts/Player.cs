@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     public GameObject player;
     public static GameManager Instance {get; private set;}
 
+    public bool gameOver = false;
+    public AudioSource audioSource;
     public GameObject mainScreen;
     public GameObject curtain;
     private bool raiseLower = false;
@@ -46,14 +48,22 @@ public class Player : MonoBehaviour
     }
         if (transform.position.y <= -5) {
             print("falling");
-            GameManager.Instance.ratDead();
+            StartCoroutine("RatFall");
+            GameManager.Instance.RatDead();
             player.transform.position = new Vector2(player.transform.position.x, 4000f);
         }
 
-        if (transform.position.x >= 675) {
-            print("finish");
-            FinishGame();
+        if (!gameOver) {
+            if (transform.position.x >= 675) {
+                GameManager.Instance.EndScreen();
+                gameOver = !gameOver;
+            }
         }
+    }
+
+    IEnumerator RatFall() {
+        audioSource.Play();
+        return null;
     }
 
     void FixedUpdate() {

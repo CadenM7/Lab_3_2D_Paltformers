@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
 
     public static GameManager Instance {get; private set;}
+    public GameObject gameScreen;
     public GameObject mainScreen;
     public GameObject creditsScreen;
     public GameObject howToPlayScreen;
@@ -107,7 +108,13 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ColorLerpFunction(false, 1));
     }
 
-    public void ratDead() {
+    public void EndScreen() {
+        // StartCoroutine(LoadYourAsyncScene("EndScreen"));
+        gameScreen.SetActive(false);
+        endScreen.SetActive(true);
+    }
+
+    public void RatDead() {
         // StartCoroutine(LoadYourAsyncScene("RatDead"));
         ratDeadScreen.SetActive(true);
     }
@@ -130,11 +137,11 @@ public class GameManager : MonoBehaviour
     }
 
     public void ReturnToStartScreen() {
-        StartCoroutine(LoadYourAsyncScene("StartScreen"));
         creditsScreen.SetActive(false);
         howToPlayScreen.SetActive(false);
         ratDeadScreen.SetActive(false);
         endScreen.SetActive(false);
+        // StartCoroutine(LoadYourAsyncScene("StartScreen"));
         mainScreen.SetActive(true);
     }
     
